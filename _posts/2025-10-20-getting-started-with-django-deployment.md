@@ -1,74 +1,78 @@
 ---
 layout: post
-title: "Getting Started with Django Deployment (Free Forever Options)"
+title: "How I Found the Best Free Way to Host My Django App (After Render & Railway)"
 date: 2025-10-20
-categories: [Django, Deployment, Free Hosting]
-tags: [django, koyeb, fly.io, webdev, deployment]
+categories: [Django, Deployment, Hosting]
+tags: [django, koyeb, fly.io, free-tier, webdev]
 author: Sarvam
 ---
 
-Deploying a Django app can be a challenge — especially once you’ve hit the limits of Render and Railway’s free tiers.  
-But don’t worry — there are **still solid options** for hosting your Django project *forever free*.
+If you’ve ever built something cool with Django, you know the real headache starts right after you finish coding — **deployment**.  
+
+When I first launched my project, I was happy to see it live on Render. Then the free tier ran out.  
+So I moved to Railway. A few weeks later… that one hit its limit too. 😅  
+
+That’s when I went down a rabbit hole to find **a truly free and reliable place** to host small Django apps — something I could keep running without worrying about “credit card required” or “usage exceeded” messages.
+
+Here’s what I found.
 
 ---
 
-## 🧭 The Problem
+## 💡 The Short Answer
 
-Most free hosting providers either:
-- Limit monthly hours or usage,  
-- Require credit card verification, or  
-- Drop the free tier after a while (like Heroku did 😅).
-
-So, what’s left in 2025?
+After a lot of testing, reading docs, and a few deployment failures at 2 a.m.,  
+**Koyeb** turned out to be the best “forever free” platform for my kind of projects.
 
 ---
 
-## 🚀 The Best “Forever Free” Options
+## 🥇 Why I Picked Koyeb
 
-### 🥇 **Koyeb**
-- Simple, modern PaaS for deploying small web apps.
-- Free tier includes 512 MB RAM and 2 GB SSD storage.
-- GitHub integration for easy deployment.
-- Great for small Django or Flask apps.
+Koyeb feels like what Heroku *used to be*. You connect your GitHub repo, pick Python, and it just… works.  
+No Docker setup. No random billing warnings. Just clean and simple.
 
-**Pro tip:** Pair it with a free PostgreSQL DB from [Neon.tech](https://neon.tech) or [ElephantSQL](https://www.elephantsql.com/).
+You get:
+- 512 MB RAM  
+- 2 GB SSD  
+- 1 vCPU  
+- Automatic deployment from GitHub  
 
----
-
-### 🥈 **Fly.io**
-- Free “allowances” for small VM deployments.
-- Ideal if you’re comfortable with Docker.
-- Has global edge locations for faster access.
-
-Watch your resource usage — going over the free limit may cost you.
+That’s not much, but for a small Django project or portfolio app — it’s perfect.  
+I paired it with a free PostgreSQL database from [Neon.tech](https://neon.tech), and the combo has been rock solid so far.
 
 ---
 
-### 🥉 **AlwaysData**
-- Easiest setup for beginners.
-- Built-in Django support — no Docker needed!
-- Free plan with 100 MB storage, great for testing or portfolios.
+## ⚙️ My Setup Looks Like This
+
+| Purpose | Service | Notes |
+|----------|----------|-------|
+| Django app | **Koyeb** | Free and easy to deploy |
+| Database | **Neon.tech** | Simple PostgreSQL hosting |
+| Static/media files | **Cloudinary** | Great free image hosting |
+| Domain | **Freenom / Custom** | Optional, if you want a custom domain |
+
+It took maybe 15 minutes to set up everything — and zero money.
 
 ---
 
-## 🧰 Recommended Stack for a Free Django Setup
+## 🧠 What Didn’t Work
 
-| Component | Free Option | Notes |
-|------------|--------------|-------|
-| App Hosting | **Koyeb** | Forever free, GitHub deploy |
-| Database | **Neon.tech / ElephantSQL** | External PostgreSQL |
-| Media Files | **Cloudinary / S3 Free Tier** | For uploads |
-| Frontend | **Vercel / Netlify** | For static assets |
+I tried Fly.io too — it’s a solid platform, but setting up Docker and managing memory for Django felt overkill for a small side project.  
+Also, the “free allowance” wording made me nervous. You never know when the meter starts ticking.
+
+AlwaysData was nice but has too little storage for anything beyond a test project.
 
 ---
 
-## 🎯 Final Thoughts
+## ✨ The Takeaway
 
-If you just need a **lightweight, forever-free Django deployment**,  
-**Koyeb + Neon.tech** is the cleanest and most stable combo right now.
+If you’re a student, indie dev, or just experimenting,  
+**Koyeb + Neon.tech + Cloudinary** is probably the best free stack you can get in 2025.
 
-I’ll post a step-by-step guide soon on how to set up this stack — stay tuned!
+It’s simple, fast, and doesn’t die quietly when the free tier ends.  
+I’ve had my Django app running for weeks without touching a thing — and it’s still alive, which is more than I can say for most “free” hosts.
 
 ---
 
-*Thanks for reading! If you found this useful, share it or connect with me on LinkedIn — I’d love to hear what you’re building.*
+Thanks for reading!  
+If you’ve found a better combo or have your own deployment story, I’d love to hear about it — drop me a message or comment below.  
+Let’s keep our apps online (and our wallets closed) for as long as possible. 💸
